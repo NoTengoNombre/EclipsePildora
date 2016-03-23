@@ -1,4 +1,4 @@
-package Basico;
+package Clases;
 
 public class Clase_Math {
 
@@ -47,6 +47,7 @@ public class Clase_Math {
 		System.out.println(raiz1);
 		double raiz2 = Math.sqrt(9);
 		System.out.println(raiz2);
+		
 
 	}
 }
