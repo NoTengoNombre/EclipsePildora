@@ -1,6 +1,6 @@
 package poo.Objeto;
 
-public class Coche {
+public class Coche_JOption {
 
 	// Declaracion PROPIEDADES o Caracteristicas comunes
 	private int ruedas;
@@ -18,7 +18,7 @@ public class Coche {
 	/**
 	 * Metodo : Establece el Valor Inicial de los Objetos
 	 */
-	public Coche() {
+	public Coche_JOption() {
 		ruedas = 4;
 		largo = 200;
 		ancho = 300;
@@ -51,7 +51,8 @@ public class Coche {
 
 	//////////////////////////////// Declarar Variables
 	public void configura_asientos(String asientos_cuero) { // SETTER
-		if (asientos_cuero == "si") {
+//		PARA PODER USAR JOptionPanel hay que utilizar el metodo equals.
+		if (asientos_cuero.equalsIgnoreCase("si")) {
 			this.asientos_cuero = true;
 		} else {
 			this.asientos_cuero = false;
@@ -70,7 +71,8 @@ public class Coche {
 	// SETTER
 	public void configura_climatizador(String climatizador) {
 
-		if (climatizador.equals("si")) {
+//		PARA PODER USAR JOptionPanel hay que utilizar el metodo equals.
+		if (climatizador.equalsIgnoreCase("si")) {
 			this.climatizador = true;
 		} else {
 			this.climatizador = false;
@@ -99,7 +101,7 @@ public class Coche {
 			peso_total = peso_total + 50;
 		}
 
-		if (climatizador) {
+		if (climatizador == true) {
 			peso_total = peso_total + 20;
 		}
 		return "El peso del coche es " + peso_total;
@@ -111,7 +113,7 @@ public class Coche {
 		if (asientos_cuero == true) {
 			precio_final += 2000;
 		}
-		if (climatizador) {
+		if (climatizador == true) {
 			precio_final += 1500;
 		}
 		return precio_final;
@@ -119,12 +121,3 @@ public class Coche {
 
 }
 
-// Subclases
-class Camion {
-
-}
-
-// Subclases
-class Moto {
-
-}
