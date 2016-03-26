@@ -1,4 +1,4 @@
-package poo.Constructor;
+package poo.Herencia;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
