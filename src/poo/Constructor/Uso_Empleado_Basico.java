@@ -1,12 +1,12 @@
-package poo.Herencia;
+package poo.Constructor;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Uso_Empleado {
+public class Uso_Empleado_Basico {
 
 	public static void main(String[] args) {
-		
+
 		Empleado empleado1 = new Empleado("Paco Gomez", 85000, 1990, 12, 17);
 		Empleado empleado2 = new Empleado("Ana Lopez", 95000, 1995, 06, 2);
 		Empleado empleado3 = new Empleado("Maria Martin", 105000, 2002, 03, 15);
@@ -23,8 +23,6 @@ public class Uso_Empleado {
 
 		System.out.println("Nombre : " + empleado3.dame_nombre() + " Sueldo : " + empleado3.dame_sueldo()
 				+ " Fecha de Alta : " + empleado3.dame_fecha_contrato());
-		
-		
 
 	}
 }

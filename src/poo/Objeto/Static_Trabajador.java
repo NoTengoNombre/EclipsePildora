@@ -1,6 +1,6 @@
 package poo.Objeto;
 
-public class Pruebas_Trabajador {
+public class Static_Trabajador {
 
 	public static void main(String[] args) {
 
@@ -31,9 +31,9 @@ class Empleados {
 
 	private final String nombre; // FINAL
 	private String seccion;
-	private int id;
 	private static int IdSiguiente = 1;
-
+	private int id;
+ 
 	public Empleados(String nom) { // Constructor : Darle estado inicial
 		nombre = nom;
 		seccion = "Administracion";
@@ -52,5 +52,6 @@ class Empleados {
 	public static String dame_IdSiguiente() {
 		return "El idSiguiente " + Empleados.IdSiguiente;
 	}
-
 }
+
+
