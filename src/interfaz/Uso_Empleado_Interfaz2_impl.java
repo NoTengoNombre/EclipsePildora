@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Uso_Empleado_Interfaz_impl {
+public class Uso_Empleado_Interfaz2_impl {
 
 	public static void main(String[] args) {
 
@@ -24,14 +24,12 @@ public class Uso_Empleado_Interfaz_impl {
 		misEmpleados[5] = new Jefatura1("Maria", 95000, 1999, 5, 26);
 
 		Jefatura1 jefa_Finanzas = (Jefatura1) misEmpleados[5];
-		
-		jefa_Finanzas.establece_Incentivos(55000);
-		
-		System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas DIAS DE VACACIONES a los Empleados"));
 
-//		Ejemplo de como una SuperClase utiliza una interfaz
-//		misEmpleados[3].tomar_decisiones("eeeeee"); 
-		
+		jefa_Finanzas.establece_Incentivos(55000);
+
+		// Objeto Subclase Jefatura1 que tiene el metodo Implementado de la Interfaz Jefes
+		/* MI */System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas DIAS DE VACACIONES a los Empleados")); /* METODO INTERFAZ JEFES */
+
 		Empleado1 director_comercial = new Jefatura1("Sandra", 85000, 2012, 05, 05);
 
 		// Principio de sustitucion ; No se puede instanciar una Interfaz pero
@@ -77,8 +75,9 @@ public class Uso_Empleado_Interfaz_impl {
 }
 
 // Empleado tiene que implementar el metodo de la Interfaz Comparable
-//class Empleado1 implements Comparable , Jefes {
-	class Empleado1 implements Comparable { // Ejemplo de como una superclase puede ser implementada por varias Interfaces
+class Empleado1 implements Comparable { // Ejemplo de como una superclase puede
+										// ser implementada por varias
+										// Interfaces
 
 	public Empleado1(String nom, double sue, int agno, int mes, int dia) {
 		nombre = nom;
@@ -108,10 +107,6 @@ public class Uso_Empleado_Interfaz_impl {
 	public void subeSueldo(double porcentaje) {
 		double aumento = sueldo * porcentaje / 100;
 		sueldo += aumento;
-	}
-
-	public String tomar_decisiones(String decision){
-		return "Un miembro de la direccion ha tomado la decision de : "+decision;
 	}
 
 	/**
@@ -145,17 +140,17 @@ public class Uso_Empleado_Interfaz_impl {
 	private int id;
 }
 
-//	Ejemplo de como una SuperClase implementa una Interfaz 
-//class Jefatura1 extends Empleado1 implements Jefes {
-	class Jefatura1 extends Empleado1 {
+// Ejemplo de como una SuperClase implementa una Interfaz
+class Jefatura1 extends Empleado1 implements Jefes {
 
 	public Jefatura1(String nom, double sue, int agno, int mes, int dia) {
 		super(nom, sue, agno, mes, dia);
 	}
-	
-//	Para usarlo en una Superclase hay que añadirlo a la estructura de la clase
-	public String tomar_decisiones(String decision){
-		return "Un miembro de la direccion ha tomado la decision de : "+decision;
+
+	// Para usarlo en una Superclase hay que añadirlo a la estructura de la
+	// clase
+	public String tomar_decisiones(String decision) {
+		return "Un miembro de la direccion ha tomado la decision de : " + decision;
 	}
 
 	public void establece_Incentivos(double b) {

@@ -1,9 +1,0 @@
-	/**
- * 
- */
-/**
- * @author PORTATIL
- *
- */
-package interfaz;
-

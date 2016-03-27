@@ -1,6 +1,7 @@
 package interfaz;
 
-public interface Jefes {
+//
+public interface Jefes{
 	/*
 	 * Queremos determinar el comportamiendo de esta interfaz por eso vamos a
 	 * crear un metodo llamado tomar_decisiones , asi obligamos a todos los
