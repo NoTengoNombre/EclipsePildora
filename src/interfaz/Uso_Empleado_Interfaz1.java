@@ -38,7 +38,7 @@ public class Uso_Empleado_Interfaz1 {
 		// comprobar si una instancia pertenece a esa clase o no , eso se hace
 		// con un instanceof y un IF
 
-//	instanceOf se puede usar para Interfaces y Clases
+		// instanceOf se puede usar para Interfaces y Clases
 		if (director_comercial instanceof Empleado) {
 			System.out.println("Es de tipo Jefatura");
 		}

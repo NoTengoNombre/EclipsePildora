@@ -16,6 +16,7 @@ import java.util.GregorianCalendar;
 //mediantes las
 //Recuerda : recomendaciones de la API : JUAN PALOMO
 //Empleado tiene que implementar el metodo de la Interfaz Comparable
+
 public class Uso_Empleado_Interfaz3_SuperClase_Interfaces_No_Correcto_ {
 
 	public static void main(String[] args) {

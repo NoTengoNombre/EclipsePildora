@@ -6,30 +6,29 @@ import java.util.GregorianCalendar;
 
 /**
  * Video 51
- * 
  * @author PORTATIL Implementar un nuevo metodo en la interfaz para la
  *         Superclase Empleados
  */
-public class Uso_Empleado_Interfaz4_Hereda_Comparable {
+public class Uso_Empleado_Interfaz51_Hereda_Comparable {
 
 	public static void main(String[] args) {
 
-		Jefatura13 jefe_RRHH = new Jefatura13("Juan", 55000, 2006, 9, 25);
+		Jefatura51 jefe_RRHH = new Jefatura51("Juan", 55000, 2006, 9, 25);
 
 		jefe_RRHH.establece_Incentivos(2750);
 
-		Empleado13[] misEmpleados = new Empleado13[6];
+		Empleado51[] misEmpleados = new Empleado51[6];
 
-		misEmpleados[0] = new Empleado13("Ana", 30000, 2000, 07, 07);
-		misEmpleados[1] = new Empleado13("Carlos", 50000, 1995, 06, 15);
-		misEmpleados[2] = new Empleado13("Paco", 25000, 2005, 9, 25);
-		misEmpleados[3] = new Empleado13("Antonio", 47500, 2009, 11, 9);
+		misEmpleados[0] = new Empleado51("Ana", 30000, 2000, 07, 07);
+		misEmpleados[1] = new Empleado51("Carlos", 50000, 1995, 06, 15);
+		misEmpleados[2] = new Empleado51("Paco", 25000, 2005, 9, 25);
+		misEmpleados[3] = new Empleado51("Antonio", 47500, 2009, 11, 9);
 
 		misEmpleados[4] = jefe_RRHH; // Polimorfismo : principio de sustitucion
 
-		misEmpleados[5] = new Jefatura13("Maria", 95000, 1999, 5, 26);
+		misEmpleados[5] = new Jefatura51("Maria", 95000, 1999, 5, 26);
 
-		Jefatura13 jefa_Finanzas = (Jefatura13) misEmpleados[5];
+		Jefatura51 jefa_Finanzas = (Jefatura51) misEmpleados[5];
 
 		jefa_Finanzas.establece_Incentivos(55000);
 
@@ -47,13 +46,13 @@ public class Uso_Empleado_Interfaz4_Hereda_Comparable {
 		// Interfaz Jefes
 		/* MI */System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas DIAS DE VACACIONES a los Empleados"));
 
-		Empleado13 director_comercial = new Jefatura13("Sandra", 85000, 2012, 05, 05);
+		Empleado51 director_comercial = new Jefatura51("Sandra", 85000, 2012, 05, 05);
 
 		// Principio de sustitucion ; No se puede instanciar una Interfaz pero
 		// si se puede implementar
 		// un objeto que es de la superclase Empleado y así utilizar su
 		// constructor.
-		Comparable ejemplo = new Empleado13("Elisabeth", 95000, 2011, 06, 07);
+		Comparable ejemplo = new Empleado51("Elisabeth", 95000, 2011, 06, 07);
 
 		// Instruccion instanceOf -> Se usa en programas complejos que tenga un
 		// monton de clases que van heredando 1 de otra es probable necesidad de
@@ -61,7 +60,7 @@ public class Uso_Empleado_Interfaz4_Hereda_Comparable {
 		// con un instanceof y un IF
 
 		// instanceOf se puede usar para Interfaces y Clases
-		if (director_comercial instanceof Empleado13) {
+		if (director_comercial instanceof Empleado51) {
 			System.out.println("Es de tipo Jefatura");
 		}
 
@@ -77,13 +76,13 @@ public class Uso_Empleado_Interfaz4_Hereda_Comparable {
 		 */
 		jefa_Finanzas.establece_Incentivos(55000);
 
-		for (Empleado13 e : misEmpleados) {
+		for (Empleado51 e : misEmpleados) {
 			e.subeSueldo(5);
 		}
 
 		Arrays.sort(misEmpleados);
 
-		for (Empleado13 e : misEmpleados) {
+		for (Empleado51 e : misEmpleados) {
 			System.out.println(" Nombre: " + e.dameNombre() + " Sueldo : " + e.dameSueldo() + " Fecha de Alta : "
 					+ e.dameFechaContrato());
 		}
@@ -93,9 +92,9 @@ public class Uso_Empleado_Interfaz4_Hereda_Comparable {
 // Empleado tiene que implementar el metodo de la Interfaz Comparable y el de
 // Trabajadores porque es un metodo abstracto que va a estar disponible en todas
 // las jerarquias de clases
-class Empleado13 implements Comparable, Trabajadores /* Super-Interfaz */ {
+class Empleado51 implements Comparable, Trabajadores /* Super-Interfaz */ {
 
-	public Empleado13(String nom, double sue, int agno, int mes, int dia) {
+	public Empleado51(String nom, double sue, int agno, int mes, int dia) {
 		nombre = nom;
 		sueldo = sue;
 		GregorianCalendar calendario = new GregorianCalendar(agno, mes - 1, dia);
@@ -104,7 +103,7 @@ class Empleado13 implements Comparable, Trabajadores /* Super-Interfaz */ {
 		id = idSiguiente;
 	}
 
-	public Empleado13(String nom) {
+	public Empleado51(String nom) {
 		this(nom, 3000, 2000, 06, 17);
 	}
 
@@ -143,7 +142,7 @@ class Empleado13 implements Comparable, Trabajadores /* Super-Interfaz */ {
 	 * Tengo que hacer un casting del tipo Objeto al Empleado
 	 */
 	public int compareTo(Object miObjeto) {
-		Empleado13 otroEmpleado = (Empleado13) miObjeto;
+		Empleado51 otroEmpleado = (Empleado51) miObjeto;
 		if (this.id < otroEmpleado.id) {
 			return -1;
 		}
@@ -162,9 +161,9 @@ class Empleado13 implements Comparable, Trabajadores /* Super-Interfaz */ {
 }
 
 // Ejemplo de como una SuperClase implementa una Interfaz
-class Jefatura13 extends Empleado13 implements JefesHereda {
+class Jefatura51 extends Empleado51 implements JefesHereda {
 
-	public Jefatura13(String nom, double sue, int agno, int mes, int dia) {
+	public Jefatura51(String nom, double sue, int agno, int mes, int dia) {
 		super(nom, sue, agno, mes, dia);
 	}
 
