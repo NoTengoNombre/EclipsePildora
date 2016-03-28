@@ -1,6 +1,5 @@
-package ficheros;
+package ficheros_152;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -11,7 +10,7 @@ import java.io.IOException;
  * 
  * Tengo que ver los restantes videos  : 153 , 154 , 155 , 156 
  */
-public class ficheros_basicos {
+public class ficheros_basicos_152 {
 	public static void main(String[] args) {
 
 		Leer_Fichero accediendo = new Leer_Fichero();
@@ -23,11 +22,13 @@ public class ficheros_basicos {
 class Leer_Fichero {
 
 	public void lee() {
+		
+		FileReader entrada = null;
+		
 		try {
 			// Abrimos un flujo de datos "Stream" o "Comunicacion" esta
 			// consumiendo recursos
-			FileReader entrada = new FileReader("C:\\Users\\PORTATIL\\Documents\\datos1.txt");
-
+			entrada = new FileReader("C:\\Users\\PORTATIL\\Documents\\datos.txt");
 			int c = entrada.read(); // - Se prepara para leer el 1º caracter del
 									// fichero
 			// - Va recorriendo todo el fichero hasta llegar al final que es -1
@@ -44,11 +45,16 @@ class Leer_Fichero {
 				System.out.print(letra); // codigo ascii
 				// El caracter ? significa el ultimo caracter
 			}
-
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// e.printStackTrace();
 			// System.out.println(e.getClass().getName());
 			System.out.println("No se ha encontrado el archivo \n" + e.getMessage());
+		} finally {
+			try {
+				entrada.close();
+			} catch (IOException e) {
+				System.out.println(""+e.getMessage());
+			}
 		}
 	}
 }
