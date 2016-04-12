@@ -15,17 +15,19 @@ public class CuentaUsuarios {
 		Cliente cl3 = new Cliente("Maria", "00003", 4000);
 		Cliente cl4 = new Cliente("Julio", "00004", 5000);
 
+		// Colleccion de Clientes
+		// De tipo Set - HashSet
 		Set<Cliente> clientesBanco = new HashSet<Cliente>();
 
+		// HashSet Detecta que esta duplicado y no lo agrega
 		clientesBanco.add(cl1);
 		clientesBanco.add(cl2);
 		clientesBanco.add(cl3);
 		clientesBanco.add(cl4);
 
 		for (Cliente cliente : clientesBanco) {
-			System.out.println(cliente.getNombre() + " "
-					+ cliente.getN_Cuenta() + " " + cliente.getSaldo());
+			System.out.println(cliente.getNombre() + " " + cliente.getN_Cuenta() + " " + cliente.getSaldo());
 		}
-		
+
 	}
 }
