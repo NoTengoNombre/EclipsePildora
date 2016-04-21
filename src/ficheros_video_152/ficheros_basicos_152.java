@@ -1,4 +1,4 @@
-package ficheros_152;
+package ficheros_video_152;
 
 import java.io.FileReader;
 import java.io.IOException;
