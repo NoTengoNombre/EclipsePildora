@@ -1,5 +1,5 @@
 
-package ficheros.buffer;
+package stream;
 
 public class Usar_Fichero {
 

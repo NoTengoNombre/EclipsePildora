@@ -1,4 +1,4 @@
-package ficheros.buffer;
+package stream;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ public class Leer_Fichero {
 	public void lee() {
 		FileReader entrada = null;
 		try {
-			entrada = new FileReader("c:\\x_java\\dato1s.txt");
+			entrada = new FileReader("c:\\x_java\\datos.txt");
 
 			int c = 0;
 
